@@ -67,7 +67,6 @@ export async function createOrder(userId: number) {
       productId: cartItem.product.id,
       orderId: order.id,
     });
-
     const newStock = cartItem.product.stock - cartItem.quantity;
     await productService.updateProduct(cartItem.product.id, {
       stock: newStock,
